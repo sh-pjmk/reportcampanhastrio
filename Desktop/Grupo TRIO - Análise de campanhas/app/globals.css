@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-wine: #6b0f1a;
+  --color-gold: #c9a84c;
+  --color-cream: #faf7f2;
+  --color-white: #ffffff;
+  --color-text: #2c1810;
+  --color-muted: #8c7b6b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(107, 15, 26, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-baskerville), Georgia, serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf7f2;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a84c44;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a84c88;
+}
+
+/* Drop zone animation */
+@keyframes pulse-border {
+  0%,
+  100% {
+    border-color: rgba(201, 168, 76, 0.4);
+  }
+  50% {
+    border-color: rgba(201, 168, 76, 0.9);
+  }
+}
+
+.drop-zone-active {
+  animation: pulse-border 1s ease-in-out infinite;
+}
